@@ -1,11 +1,11 @@
 Summary:	Creates a top-level info `dir' file
 Name:		fix-info-dir
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
