@@ -1,9 +1,10 @@
 %define no_install_post_compress_docs 1
+
 Summary:	Creates a top-level info `dir' file
-Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info.
+Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info
 Name:		fix-info-dir
 Version:	0.13
-Release:	1
+Release:	2
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
@@ -22,13 +23,15 @@ Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 %setup -q 
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS -fomit-frame-pointer -DNDEBUG"
+%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} \
+	-fomit-frame-pointer -DNDEBUG"
  
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_infodir}}
 
-install -s %{name} $RPM_BUILD_ROOT/%{_sbindir}
+install %{name} $RPM_BUILD_ROOT/%{_sbindir}
+
 touch $RPM_BUILD_ROOT/%{_infodir}/{dir,dir.old}
 
 %clean
