@@ -16,7 +16,7 @@ Utility which creates a top-level `dir' file in the Info system.
 %setup -q 
 
 %build
-make CFLAGS='-O2 -fomit-frame-pointer -DNDEBUG'
+%{__make} CFLAGS='-O2 -fomit-frame-pointer -DNDEBUG'
  
 %install
 rm -rf $RPM_BUILD_ROOT
