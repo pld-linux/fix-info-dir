@@ -8,6 +8,7 @@ Release:	4
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
+# Source0-md5: 27e91d3e5c91a2fdad85bf93c9e4cfcf
 BuildRequires:	zlib-devel
 Prereq:		zlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
