@@ -30,9 +30,9 @@ Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_infodir}}
 
-install %{name} $RPM_BUILD_ROOT/%{_sbindir}
+install %{name} $RPM_BUILD_ROOT%{_sbindir}
 
-touch $RPM_BUILD_ROOT/%{_infodir}/{dir,dir.old}
+touch $RPM_BUILD_ROOT%{_infodir}/{dir,dir.old}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
