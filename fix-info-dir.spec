@@ -34,8 +34,7 @@ touch $RPM_BUILD_ROOT/%{_infodir}/{dir,dir.old}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_sbindir}/fix-info-dir %{_infodir} && \
-rm -f %{_infodir}/dir.rpmsave && rm -f %{_infodir}/dir.old.rpmsave
+%{_sbindir}/fix-info-dir %{_infodir} 
 
 %files
 %defattr(644,root,root,755)
