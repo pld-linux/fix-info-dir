@@ -18,13 +18,13 @@ Utility which creates a top-level `dir' file in the Info system.
 %description -l pl
 Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 
-%prep 
-%setup -q 
+%prep
+%setup -q
 
 %build
 %{__make} CFLAGS="%{rpmcflags} \
 	-fomit-frame-pointer -DNDEBUG"
- 
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_infodir}}
@@ -37,10 +37,10 @@ touch $RPM_BUILD_ROOT/%{_infodir}/{dir,dir.old}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_sbindir}/fix-info-dir %{_infodir} 
+%{_sbindir}/fix-info-dir %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/%{name}
-%ghost %{_infodir}/dir 
+%ghost %{_infodir}/dir
 %ghost %{_infodir}/dir.old
