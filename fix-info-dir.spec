@@ -2,7 +2,7 @@ Summary:	Creates a top-level info `dir' file
 Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info.
 Name:		fix-info-dir
 Version:	0.12
-Release:	2
+Release:	3
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
