@@ -1,6 +1,7 @@
 Summary:	Creates a top-level info `dir' file
+Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info.
 Name:		fix-info-dir
-Version:	0.11
+Version:	0.12
 Release:	1
 License:	GPL
 Group:		Utilities/System
@@ -12,11 +13,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Utility which creates a top-level `dir' file in the Info system.
 
+%description -l pl
+Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
+
 %prep 
 %setup -q 
 
 %build
-%{__make} CFLAGS='-O2 -fomit-frame-pointer -DNDEBUG'
+%{__make} CFLAGS="$RPM_OPT_FLAGS -fomit-frame-pointer -DNDEBUG"
  
 %install
 rm -rf $RPM_BUILD_ROOT
