@@ -1,8 +1,8 @@
 Summary:	Creates a top-level info `dir' file
 Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info.
 Name:		fix-info-dir
-Version:	0.12
-Release:	3
+Version:	0.13
+Release:	1
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
@@ -34,7 +34,8 @@ touch $RPM_BUILD_ROOT/%{_infodir}/{dir,dir.old}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_sbindir}/fix-info-dir %{_infodir}
+%{_sbindir}/fix-info-dir %{_infodir} && \
+rm -f %{_infodir}/dir.rpmsave && rm -f %{_infodir}/dir.old.rpmsave
 
 %files
 %defattr(644,root,root,755)
