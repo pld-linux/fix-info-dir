@@ -23,7 +23,7 @@ Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 %setup -q 
 
 %build
-%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} \
+%{__make} CFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS} \
 	-fomit-frame-pointer -DNDEBUG"
  
 %install
