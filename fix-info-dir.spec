@@ -4,10 +4,11 @@ Summary:	Creates a top-level info `dir' file
 Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info
 Name:		fix-info-dir
 Version:	0.13
-Release:	2
+Release:	3
 License:	GPL
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
 BuildRequires:	zlib-devel
 Prereq:		zlib
