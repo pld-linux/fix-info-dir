@@ -21,6 +21,8 @@ make CFLAGS='-O2 -fomit-frame-pointer -DNDEBUG'
 %install
 install -d 755 $RPM_BUILD_ROOT/%{_sbindir}
 install -s -m 755 %{name} $RPM_BUILD_ROOT/%{_sbindir}
+install -d 755 $RPM_BUILD_ROOT/%{_infodir}
+touch $RPM_BUILD_ROOT/%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -28,3 +30,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/%{name}
+%ghost %{_infodir}/dir
