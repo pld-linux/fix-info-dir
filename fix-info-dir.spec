@@ -7,8 +7,6 @@ Version:	0.13
 Release:	3
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
 BuildRequires:	zlib-devel
 Prereq:		zlib
