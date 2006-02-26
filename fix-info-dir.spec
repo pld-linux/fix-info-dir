@@ -23,8 +23,9 @@ Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 %setup -q
 
 %build
-%{__make} CFLAGS="%{rpmcflags} \
-	-fomit-frame-pointer -DNDEBUG"
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -fomit-frame-pointer -DNDEBUG"
 
 %install
 rm -rf $RPM_BUILD_ROOT
