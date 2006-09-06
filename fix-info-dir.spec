@@ -9,8 +9,8 @@ License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
 # Source0-md5:	27e91d3e5c91a2fdad85bf93c9e4cfcf
+Patch0:		%{name}-Makefile.patch
 BuildRequires:	zlib-devel
-Prereq:		zlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,11 +21,13 @@ Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -fomit-frame-pointer -DNDEBUG"
+	CFLAGS="%{rpmcflags} -fomit-frame-pointer -DNDEBUG" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
