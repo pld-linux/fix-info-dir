@@ -1,0 +1,28 @@
+diff -Nur fix-info-dir-0.13.orig/Makefile fix-info-dir-0.13.Makefile/Makefile
+--- fix-info-dir-0.13.orig/Makefile	2000-07-20 15:59:01.000000000 +0000
++++ fix-info-dir-0.13.Makefile/Makefile	2006-09-06 17:45:59.000000000 +0000
+@@ -11,8 +11,8 @@
+ CPPFLAGS = -DVERSION=\"$(VERSION)\"
+ CPPFLAGS += -I$(TRURLDIR)
+ override CFLAGS += -g -pedantic -Wall -W 
+-LIBS	= -lz
+-LDLAGS 	= $(TRURLDIR)/narray.a $(LIBS)
++LIBS	= $(TRURLDIR)/narray.a -lz
++LDLAGS 	=
+ CC 	= gcc
+ SHELL 	= /bin/sh
+ RANLIB  = ranlib
+@@ -28,10 +28,10 @@
+ %.o:	%.c
+ 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+ 
+-all: 	trurl $(TARGET)
++all: 	$(TARGET)
+ 
+-$(TARGET): $(TARGET).o
+-	$(CC) $(CFLAGS) -o $@ $@.o  $(LDLAGS)
++$(TARGET): $(TARGET).o trurl
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
+ 
+ trurl:  
+ 	$(MAKE) -C $(TRURLDIR) modules=on symlink narray.a CFLAGS='$(CFLAGS)'
