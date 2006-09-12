@@ -12,17 +12,18 @@ diff -Nur fix-info-dir-0.13.orig/Makefile fix-info-dir-0.13.Makefile/Makefile
  CC 	= gcc
  SHELL 	= /bin/sh
  RANLIB  = ranlib
-@@ -28,10 +28,10 @@
+@@ -28,10 +28,12 @@
  %.o:	%.c
  	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
  
 -all: 	trurl $(TARGET)
 +all: 	$(TARGET)
  
--$(TARGET): $(TARGET).o
+ $(TARGET): $(TARGET).o
 -	$(CC) $(CFLAGS) -o $@ $@.o  $(LDLAGS)
-+$(TARGET): $(TARGET).o trurl
 +	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
++
++$(TARGET).o: trurl
  
  trurl:  
  	$(MAKE) -C $(TRURLDIR) modules=on symlink narray.a CFLAGS='$(CFLAGS)'
