@@ -1,7 +1,7 @@
 %define no_install_post_compress_docs 1
 
 Summary:	Creates a top-level info `dir' file
-Summary(pl):	Tworzy g³ówny plik 'dir' dla systemu Info
+Summary(pl.UTF-8):   Tworzy gÅ‚Ã³wny plik 'dir' dla systemu Info
 Name:		fix-info-dir
 Version:	0.13
 Release:	8
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Utility which creates a top-level `dir' file in the Info system.
 
-%description -l pl
-Narzêdzie tworz±ce g³ówny plik 'dir' dla systemu Info
+%description -l pl.UTF-8
+NarzÄ™dzie tworzÄ…ce gÅ‚Ã³wny plik 'dir' dla systemu Info
 
 %prep
 %setup -q
