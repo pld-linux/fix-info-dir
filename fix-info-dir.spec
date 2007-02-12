@@ -1,7 +1,7 @@
 %define no_install_post_compress_docs 1
 
 Summary:	Creates a top-level info `dir' file
-Summary(pl.UTF-8):   Tworzy główny plik 'dir' dla systemu Info
+Summary(pl.UTF-8):	Tworzy główny plik 'dir' dla systemu Info
 Name:		fix-info-dir
 Version:	0.13
 Release:	8
