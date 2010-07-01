@@ -1,5 +1,7 @@
-%define no_install_post_compress_docs 1
-
+# TODO
+# - build with (static) trurlib
+# - fix-info-dir.c: In function `usage':
+#   fix-info-dir.c:391: warning: string length `1007' is greater than the length `509' ISO C89 compilers are required to support
 Summary:	Creates a top-level info `dir' file
 Summary(pl.UTF-8):	Tworzy główny plik 'dir' dla systemu Info
 Name:		fix-info-dir
