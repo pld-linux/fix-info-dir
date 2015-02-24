@@ -6,7 +6,7 @@ Summary:	Creates a top-level info `dir' file
 Summary(pl.UTF-8):	Tworzy główny plik 'dir' dla systemu Info
 Name:		fix-info-dir
 Version:	0.13
-Release:	9
+Release:	10
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.pld.org.pl/software/fix-info-dir/%{name}-%{version}.tar.gz
