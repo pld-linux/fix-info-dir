@@ -23,7 +23,7 @@ Narzędzie tworzące główny plik 'dir' dla systemu Info
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} \
